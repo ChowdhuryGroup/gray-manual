@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{color}
 
 \title{Gray Laser Manual}
 \author{Conrad Kuz}
@@ -29,12 +30,12 @@ Basic guide for realigning GRAY laser.
 \section{Regen alignment}
 \begin{enumerate}
     \item Align pump to center of crystal. Run at low power and use lens tissue to see crystal.
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[width=1.0\textwidth]{Regen Alignment/HeNe Alignment}
-        \caption{Setup for basic HeNe Alignment}
-        \label{fig:my_label}
-    \end{figure}
+          \begin{figure}[!ht]
+              \centering
+              \includegraphics[width=1.0\textwidth]{Regen Alignment/HeNe Alignment}
+              \caption{Setup for basic HeNe Alignment}
+              \label{fig:HeNe_alignment}
+          \end{figure}
     \item Send HeNe perpendicularly through lens and back mirrors.
     \item \label{itm:tweakCrystal} Tweak mirror 1 and 4 to send hene through center of crystal back face and front face. Use lens tissue to see crystal shadow
     \item \label{itm:tweakOverlap} Check overlap using lens tissue of forward and backward propagation between mirror 2 and crystal. Tweak mirror 3 until they are on top of each other.
@@ -44,14 +45,14 @@ Basic guide for realigning GRAY laser.
     \item Install waveplate, set to zero rotation
     \item Cross check step \ref{itm:tweakCrystal} and \ref{itm:tweakOverlap}
     \item Repeat step \ref{itm:optimizeAmps}, additionally, tweak waveplate for best lasing.
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[width=1.0\textwidth]{Regen Alignment/PolarizerAlignment.png}
-        \caption{Caption}
-        \label{fig:my_label}
-    \end{figure}
+          \begin{figure}[!ht]
+              \centering
+              \includegraphics[width=1.0\textwidth]{Regen Alignment/PolarizerAlignment.png}
+              \caption{Caption}
+              \label{fig:polarizer_alignment}
+          \end{figure}
     \item Install pockel's cell. Align beam through center then tweak alignment using dot and cross method - Maltese Cross.
-    \item Repeat step \ref{itm:optimizeAmps} 
+    \item Repeat step \ref{itm:optimizeAmps}
     \item Place two irises in the lasing mode, one between mirror 2 and 3, and one between 1 and 4.
     \item Align the seed pulse to bounce off the polarizer closest to the lens so it follows the lasing mode. Use the two irises from the previous step.
     \item With waveplate at zero degree rotation, Pockel cell on maybe look at output on oscilliscope. Set pulse width to 0.6, delay around 3
@@ -64,7 +65,7 @@ Basic guide for realigning GRAY laser.
     \item tweak optics to optimize power
 \end{enumerate}
 \section{Regen Timing}
-Oscillator creates 76MhZ pulse detected by a photodiode
+Oscillator creates 76MHz pulse detected by a photodiode
 
 \section{Compressor Alignment}
 \begin{enumerate}
@@ -72,6 +73,11 @@ Oscillator creates 76MhZ pulse detected by a photodiode
     \item Install two tall irises and align the beam after the periscope to them.
     \item run d-scan and auto-correlation. adjust as necessary
 \end{enumerate}
+
+\section{Fixing Oscillator}
+Over time, the oscillator cavity will tend to drift, such that CW power may drop from 400mW to something like 300mW or worse.
+In that case, the cavity mirrors {\color{red} add annotated picture} need to be adjusted to maximize the CW power.
+When the CW power falls, modelocking will either become impossible, or if modelocking is achieved, it will be unstable and randomly drop out.
 
 \section{Troubleshooting dumb stuff}
 \begin{itemize}
